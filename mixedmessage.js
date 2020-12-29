@@ -7,6 +7,9 @@ const adverb = ['on the toilet', 'from his own memory', 'while he was riding a w
 // all arrays in one array to keep an overview
 const allArrays = [artist, verb, song, adverb];
 
+// make it possible to add a value to an array
+const addItem = (array, value) => array.push(value);
+
 // return a random sentence
 const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
     let randomArtist = allArrays[0][Math.floor(Math.random() * artist.length)];
@@ -30,4 +33,5 @@ const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
     return sentence;
 }
 
-console.log(createSentence('Eminem', false, false, 'by heart'));
+addItem(artist, '2Pac');
+console.log(createSentence());
