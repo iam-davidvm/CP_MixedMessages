@@ -10,9 +10,9 @@ const allArrays = [artist, verb, song, adverb];
 // return a random sentence
 const createSentence = () => {
     const randomArtist = Math.floor(Math.random() * artist.length);
-    const randomVerb = Math.floor(Math.random() * artist.length);
-    const randomSong = Math.floor(Math.random() * artist.length);
-    const randomAdverb = Math.floor(Math.random() * artist.length);
+    const randomVerb = Math.floor(Math.random() * verb.length);
+    const randomSong = Math.floor(Math.random() * song.length);
+    const randomAdverb = Math.floor(Math.random() * adverb.length);
     let sentence = allArrays[0][randomArtist] + ' ' + allArrays[1][randomVerb] + ' ' + allArrays[2][randomSong] + ' ' + allArrays[3][randomAdverb];
     return sentence;
 }
