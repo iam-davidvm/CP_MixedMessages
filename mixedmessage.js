@@ -8,14 +8,26 @@ const adverb = ['on the toilet', 'from his own memory', 'while he was riding a w
 const allArrays = [artist, verb, song, adverb];
 
 // return a random sentence
-const createSentence = () => {
-    const randomArtist = Math.floor(Math.random() * artist.length);
-    const randomVerb = Math.floor(Math.random() * verb.length);
-    const randomSong = Math.floor(Math.random() * song.length);
-    const randomAdverb = Math.floor(Math.random() * adverb.length);
-    let sentence = allArrays[0][randomArtist] + ' ' + allArrays[1][randomVerb] + ' ' + allArrays[2][randomSong] + ' ' + allArrays[3][randomAdverb];
+const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
+    let randomArtist = allArrays[0][Math.floor(Math.random() * artist.length)];
+    let randomVerb = allArrays[1][Math.floor(Math.random() * verb.length)];
+    let randomSong = allArrays[2][Math.floor(Math.random() * song.length)];
+    let randomAdverb = allArrays[3][Math.floor(Math.random() * adverb.length)];
+    // a user can add his custom values
+    if (customArtist) {
+        randomArtist = customArtist;
+    }
+    if (customVerb) {
+        randomVerb = customVerb;
+    }
+    if (customSong) {
+        randomSong = customSong;
+    }
+    if (customAdverb) {
+        randomAdverb = customAdverb;
+    }
+    let sentence = randomArtist + ' ' + randomVerb + ' ' + randomSong + ' ' + randomAdverb;
     return sentence;
 }
 
-// console.log(all_arrays[0][0]);
-console.log(createSentence());
+console.log(createSentence('Eminem', false, false, 'by heart'));
