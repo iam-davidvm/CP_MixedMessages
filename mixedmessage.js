@@ -10,6 +10,9 @@ const allArrays = [artist, verb, song, adverb];
 // make it possible to add a value to an array
 const addItem = (array, value) => array.push(value);
 
+// delete a value from an array
+const removeItem = (array, value) => array = array.filter(item => item !== value);
+
 // return a random sentence
 const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
     let randomArtist = allArrays[0][Math.floor(Math.random() * artist.length)];
@@ -34,4 +37,5 @@ const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
 }
 
 addItem(artist, '2Pac');
+removeItem(artist, 'Madonna');
 console.log(createSentence());
