@@ -13,12 +13,17 @@ const addItem = (array, value) => array.push(value);
 // delete a value from an array
 const removeItem = (array, value) => array = array.filter(item => item !== value);
 
+//function to return a random from an array
+function returnRandomArrayItem(array) {
+    return array[Math.floor(Math.random() * array.length)]
+}
+
 // return a random sentence
 const createSentence = (customArtist, customVerb, customSong, customAdverb) => {
-    let randomArtist = allArrays[0][Math.floor(Math.random() * artist.length)];
-    let randomVerb = allArrays[1][Math.floor(Math.random() * verb.length)];
-    let randomSong = allArrays[2][Math.floor(Math.random() * song.length)];
-    let randomAdverb = allArrays[3][Math.floor(Math.random() * adverb.length)];
+    let randomArtist = returnRandomArrayItem(artist);
+    let randomVerb = returnRandomArrayItem(verb);
+    let randomSong = returnRandomArrayItem(song);
+    let randomAdverb = returnRandomArrayItem(adverb);
     // a user can add his custom values
     if (customArtist) {
         randomArtist = customArtist;
